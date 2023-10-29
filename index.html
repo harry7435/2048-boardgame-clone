@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./game4.css" />
+    <title>Game 4: 2048</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 제목 & 점수판 -->
+      <div class="info-box">
+        <div class="title-box">
+          <p class="title">2048</p>
+        </div>
+        <div class="score-box">
+          <p class="score-title">Score</p>
+          <p class="score"></p>
+        </div>
+      </div>
+      <!-- 게임판 -->
+      <div class="board">
+        <div class="board-row">
+          <div class="board-box" id="00"></div>
+          <div class="board-box" id="01"></div>
+          <div class="board-box" id="02"></div>
+          <div class="board-box" id="03"></div>
+        </div>
+        <div class="board-row">
+          <div class="board-box" id="10"></div>
+          <div class="board-box" id="11"></div>
+          <div class="board-box" id="12"></div>
+          <div class="board-box" id="13"></div>
+        </div>
+        <div class="board-row">
+          <div class="board-box" id="20"></div>
+          <div class="board-box" id="21"></div>
+          <div class="board-box" id="22"></div>
+          <div class="board-box" id="23"></div>
+        </div>
+        <div class="board-row">
+          <div class="board-box" id="30"></div>
+          <div class="board-box" id="31"></div>
+          <div class="board-box" id="32"></div>
+          <div class="board-box" id="33"></div>
+        </div>
+      </div>
+      <!-- 게임 메뉴 -->
+      <div class="game-menu">
+        <button class="new-game btn"><p class="new-game">새 게임</p></button>
+        <button class="go-home btn"><p class="go-home">홈 메뉴</p></button>
+      </div>
+    </div>
+  </body>
+  <script src="./src/game4.js" type="module"></script>
+</html>

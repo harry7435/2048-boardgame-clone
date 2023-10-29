@@ -1,0 +1,107 @@
+/* 전역 css */
+p {
+  color: white;
+  vertical-align: top;
+}
+
+/* 전체 컨테이너 */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #372c25;
+}
+
+/* 제목 & 점수판 */
+.info-box {
+  display: flex;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* 제목 */
+
+.title-box {
+  display: flex;
+  width: 148px;
+  justify-content: center;
+  align-items: center;
+  background: #372c25;
+  user-select: none;
+}
+
+.title {
+  font-size: 48px;
+  padding: 0;
+  margin: 0;
+}
+
+/* 점수판 */
+
+.score-box {
+  display: flex;
+  width: 148px;
+  font-weight: 700;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #46382e;
+  border-radius: 5px;
+  user-select: none;
+}
+
+.score-title {
+  font-size: 18px;
+  color: #715541;
+  margin: 10px 0;
+}
+
+.score {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+/* 게임판 */
+
+.board {
+  margin: 0 auto;
+  padding: 20px 0;
+  user-select: none;
+}
+
+.board-row {
+  display: flex;
+}
+
+.board-box {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 70px;
+  border: 2px solid #372c25;
+  border-radius: 5px;
+  height: 70px;
+  width: 70px;
+  color: #684a23;
+  background-color: #fbeddc;
+}
+
+/* 게임 메뉴 */
+.btn {
+  font-weight: 700;
+  align-items: center;
+  background: #46382e;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.1s ease-in;
+}
+
+.btn:hover {
+  background: #544337;
+}
+
+.new-game,
+.go-home {
+  user-select: none;
+}
