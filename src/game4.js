@@ -132,6 +132,18 @@ const onMouseDownHandler = (e) => {
 // 마우스 드래그 핸들러
 document.onmousedown = onMouseDownHandler;
 
+// 스크롤 방지
+const onScrollHandler = (e) => {
+  e.preventDefault();
+};
+
+const onTouchMoveHandler = (e) => {
+  e.preventDefault();
+};
+
+document.onscroll = onScrollHandler;
+document.ontouchmove = onTouchMoveHandler;
+
 // 초기화
 const init = () => {
   const [savePoint, saveBoard] = [getStorage('score'), getStorage('board')];
