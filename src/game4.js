@@ -1,11 +1,13 @@
 import { getStorage, removeStorage, setStorage } from './storage.js';
 
 let board = Array.from(Array(4), () => Array(4).fill(0));
-let boardId = Array.from([0, 1, 2, 3], n => Array(`${n}0`, `${n}1`, `${n}2`, `${n}3`));
+let boardId = Array.from([0, 1, 2, 3], (n) =>
+  Array(`${n}0`, `${n}1`, `${n}2`, `${n}3`)
+);
 let score;
 
 // 키보드 입력
-const keyDownEventHandler = e => {
+const keyDownEventHandler = (e) => {
   const keyCode = e.keyCode;
   // 상
   if (keyCode === 38) {
@@ -31,7 +33,7 @@ const keyDownEventHandler = e => {
 document.onkeydown = keyDownEventHandler;
 
 // 버튼 클릭
-const onClickEventHandler = e => {
+const onClickEventHandler = (e) => {
   const { classList } = e.target;
   // 새 게임
   if (classList.contains('new-game')) {
@@ -48,15 +50,56 @@ const onClickEventHandler = e => {
 // 버튼 클릭 핸들러
 document.onclick = onClickEventHandler;
 
+// 모바일 터치
+const onTouchStartHandler = (e) => {
+  const { clientX, clientY } = e.changedTouches[0];
+  let startX = clientX;
+  let startY = clientY;
+  let endX;
+  let endY;
+
+  const onTouchEndHandler = (e) => {
+    const { clientX, clientY } = e.changedTouches[0];
+    endX = clientX;
+    endY = clientY;
+    const dX = endX - startX;
+    const dY = endY - startY;
+
+    const isVertical = Math.abs(dY) > Math.abs(dX);
+    // 수직 이동
+    if (isVertical) {
+      if (dY > 0) {
+        moveBottom();
+      } else if (dY < 0) {
+        moveTop();
+      }
+    } else {
+      // 수평 이동
+      if (dX > 0) {
+        moveRight();
+      } else if (dX < 0) {
+        moveLeft();
+      }
+    }
+
+    boardUpdate();
+  };
+
+  document.ontouchend = onTouchEndHandler;
+};
+
+// 모바일 터치 핸들러
+document.ontouchstart = onTouchStartHandler;
+
 // 마우스 드래그
-const onMouseDownHandler = e => {
+const onMouseDownHandler = (e) => {
   const { clientX, clientY } = e;
   let startX = clientX;
   let startY = clientY;
   let endX;
   let endY;
 
-  const onMouseUpHandler = e => {
+  const onMouseUpHandler = (e) => {
     const { clientX, clientY } = e;
     endX = clientX;
     endY = clientY;
@@ -138,7 +181,7 @@ const boardUpdate = () => {
 };
 
 // 박스 색깔 변경
-const changeBoxColor = box => {
+const changeBoxColor = (box) => {
   let boxNum = parseInt(box.innerText);
   switch (boxNum) {
     case 0:
