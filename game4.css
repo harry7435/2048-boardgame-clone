@@ -1,4 +1,8 @@
 /* 전역 css */
+html {
+  background-color: #372c25;
+}
+
 p {
   color: white;
   vertical-align: top;
