@@ -6,7 +6,6 @@ p {
 
 /* 모바일 새로고침 방지 */
 body {
-  height: 100vh;
   margin: 0;
   overscroll-behavior-x: none;
   overscroll-behavior-y: none;
