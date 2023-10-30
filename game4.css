@@ -6,6 +6,8 @@ p {
 
 /* 모바일 새로고침 방지 */
 body {
+  height: 100vh;
+  margin: 0;
   overscroll-behavior-y: none;
 }
 
@@ -13,6 +15,7 @@ body {
 
 .container {
   display: flex;
+  height: 100%;
   flex-direction: column;
   background-color: #372c25;
 }
