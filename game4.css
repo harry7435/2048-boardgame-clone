@@ -4,6 +4,11 @@ p {
   vertical-align: top;
 }
 
+/* 모바일 새로고침 방지 */
+body {
+  overscroll-behavior-y: none;
+}
+
 /* 전체 컨테이너 */
 
 .container {
